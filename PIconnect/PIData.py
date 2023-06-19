@@ -462,6 +462,7 @@ class PISeriesContainer(abc.ABC):
         )
         df = pd.DataFrame()
         for summary in pivalues:
+            print(type(summary.Key), summary.Key)
             key = PIConsts.SummaryType(int(summary.Key)).name
             value = summary.Value
             timestamp = _time.timestamp_to_index(value.Timestamp.UtcTime)
